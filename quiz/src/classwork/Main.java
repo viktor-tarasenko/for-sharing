@@ -8,18 +8,40 @@ public class Main {
         Shape second = new Square(10);
         Shape third = new Circle(5);
         Shape forth = new Circle(10);
-//        List<Shape> shapes = new ArrayList<>();
-//        shapes.add(first);
-//        shapes.add(second);
-//        shapes.add(third);
-//        shapes.add(forth);
+        List<Shape> AllObjects = new ArrayList<>();
+        AllObjects.add(first);
+        AllObjects.add(second);
+        AllObjects.add(third);
+        AllObjects.add(forth);
 
-//        System.out.println(Main.calculateCost(shapes, Colour.RED));
+        System.out.println(calculateCost(AllObjects,Colour.RED));
     }
 
     private static double calculateCost(List<Shape> shapes, Colour filterColour) {
-        double costing = shapes.size() * filterColour.cost;
-        return costing;
+        double sum = 0;
+        switch (filterColour){
+            case RED:{
+                for (Shape shape : shapes) {
+                    sum += shape.colour();
+                }
+                return sum;
+            }
+            case BLUE:{
+                for (Shape shape : shapes) {
+                    sum = shape.colour();
+                }
+                return sum;
+            }
+            case GREEN:{
+                for (Shape shape : shapes) {
+                    sum = shape.colour();
+                }
+                return sum;
+            }
+            default:
+                System.out.println("Error!");
+                return sum;
+        }
     }
 
     private Shape findMostExpensive(List<Shape> shapes) {

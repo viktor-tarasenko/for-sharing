@@ -1,8 +1,11 @@
 package classwork;
 
-public interface Shape {
+public interface Shape extends Comparable<Shape> {
 
-    double size();
+    int size();
 
-    double colour();
+    int colour();
+
+    @Override
+    int compareTo(Shape o);
 }

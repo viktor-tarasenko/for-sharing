@@ -1,23 +1,32 @@
 package classwork;
 
 public class Circle implements Shape {
-    int diameter;
-    Colour colour;
+    private int diameter;
+    private Colour colour;
 
-    public Circle(int diameter) {
+    Circle(int diameter) {
         this.diameter = diameter;
     }
 
+//    Circle(int diameter, Colour colour) {
+//        this.diameter = diameter;
+//        this.colour = colour;
+//    }
+
     @Override
-    public double size() {
+    public int size() {
         int radius = diameter / 2;
         double area = Math.PI * Math.pow(radius, 2);
-        return area;
+        return (int) area;
     }
 
     @Override
-    public double colour() {
-        double costForColour = size() * colour.cost;
-        return costForColour;
+    public int colour() {
+        return size() * colour.cost;
+    }
+
+    @Override
+    public int compareTo(Shape o) {
+        return colour() - o.colour();
     }
 }

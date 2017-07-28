@@ -5,7 +5,7 @@ public enum Colour {
     GREEN(150),
     BLUE(200);
 
-    public int cost;
+    int cost;
 
     Colour(int cost) {
         this.cost = cost;
