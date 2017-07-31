@@ -24,36 +24,12 @@ public class Main {
 
     private static double calculateCost(List<Shape> shapes, Colour filterColour) {
         double sum = 0;
-        switch (filterColour) {
-            case RED: {
-                for (Shape shape : shapes) {
-                    if (shape.getColour() == Colour.RED) {
-                        sum += shape.colour();
-                    }
-                }
-                return sum;
-            }
-            case GREEN: {
-                for (Shape shape : shapes) {
-                    if (shape.getColour() == Colour.GREEN) {
-                        sum += shape.colour();
-                    }
-                }
-                return sum;
-            }
-            case BLUE: {
-                for (Shape shape : shapes) {
-                    if (shape.getColour() == Colour.BLUE) {
-                        sum += shape.colour();
-                    }
-                }
-                return sum;
-            }
-            default: {
-                System.out.println("SIC!");
-                return sum;
+        for (Shape shape : shapes) {
+            if (shape.getColour() == filterColour) {
+                sum += shape.colour();
             }
         }
+        return sum;
     }
 
     private static Shape findMostExpensive(List<Shape> shapes) {

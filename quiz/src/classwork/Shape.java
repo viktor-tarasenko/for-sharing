@@ -1,6 +1,6 @@
 package classwork;
 
-public interface Shape extends Comparable<Shape>{
+public interface Shape extends Comparable<Shape> {
 
     Colour colour = null;
 

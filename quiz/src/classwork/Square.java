@@ -38,7 +38,7 @@ public class Square implements Shape {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "Square #" + id + ", " + colour;
     }
 }
