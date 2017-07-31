@@ -10,4 +10,9 @@ public enum Colour {
     Colour(int cost) {
         this.cost = cost;
     }
+
+    @Override
+    public String toString(){
+        return this.name();
+    }
 }

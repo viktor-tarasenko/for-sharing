@@ -1,25 +1,44 @@
 package classwork;
 
 public class Square implements Shape {
-    private int side;
-    private Colour colour;
+    public int side;
+    public Colour colour;
+    public int id = 1;
 
     Square(int side) {
         this.side = side;
     }
 
-    @Override
-    public int size() {
-        return (int) Math.pow(side, 2);
+    Square(int side, Colour colour) {
+        this.side = side;
+        this.colour = colour;
+        id++;
     }
 
     @Override
-    public int colour() {
+    public Colour getColour() {
+        return colour;
+    }
+
+    @Override
+    public double size() {
+        return Math.pow(side, 2);
+    }
+
+    @Override
+    public double colour() {
         return size() * colour.cost;
     }
 
     @Override
     public int compareTo(Shape o) {
-        return colour() - o.colour();
+        Shape other = o;
+        Shape self = this;
+        return (int) self.colour() - (int) other.colour();
+    }
+
+    @Override
+    public String toString(){
+        return "Square #" + id + ", " + colour;
     }
 }
